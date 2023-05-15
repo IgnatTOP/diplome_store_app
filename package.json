@@ -1,0 +1,25 @@
+{
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "watch": "vite build --watch",
+        "preview": "vite preview --port 4173"
+    },
+    "devDependencies": {
+        "axios": "^1.1.2",
+        "laravel-vite-plugin": "^0.7.6",
+        "vite": "^4.3.5"
+    },
+    "dependencies": {
+        "@vitejs/plugin-vue": "^4.2.3",
+        "core-js": "^3.8.3",
+        "sass": "^1.62.1",
+        "scrollto": "^1.0.1",
+        "scss": "^0.2.4",
+        "vue": "^3.3.2",
+        "vue-router": "^4.2.0",
+        "vue-scrollto": "^2.20.0"
+    }
+}
