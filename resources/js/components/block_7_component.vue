@@ -3,28 +3,20 @@
       <div class="background_block">
         <div class="text_block_7">
           <div class="text">
-<!--            <p class="prepod">ПРЕПОДАВАТЕЛИ</p>-->
-<!--            <p class="matem">Математика</p>-->
-<!--            <p>Русский язык</p>-->
-<!--            <p>Обществознание </p>-->
-<!--            <p>Информатика</p>-->
-<!--            <p>Экономика</p>--></div>
-        <div class="img_block_7" :style="divStyle">
-<!--          <img src="../img/123213.png" class="photo">-->
-<!--          <p class="maria">МАРИЯ ДОБРЫНИНА</p>-->
-<!--          <div class="text_block_img">-->
-<!--            <p class="p">Образование</p>-->
-<!--            <p class="p">Статистика</p>-->
-<!--            <p class="p">Что то от преподователей</p>-->
-<!--            <p class="p">Текст</p>-->
-<!--            <p class="p">Текст</p>-->
-<!--          </div>-->
-        </div>
+            <p class="prepod">ПРЕПОДАВАТЕЛИ</p>
+          <div class="fffff" v-for="prepod in prepods">
+            <p @click="show(prepod)" :style="{ fontSize: prepod.show ? '26px' : '20px', color: prepod.show ? 'black' : '#515151' }" class="prepod_name_text">{{prepod.name}}</p>
+            <div class="img_block_7" :style="divStyle" v-if="prepod.show">
+              <img src="../img/123213.png" class="photo">
+              <p class="maria">МАРИЯ ДОБРЫНИНА</p>
+              <div class="text_block_img">
+                  {{prepod.text}}
+              </div>
+            </div>
+          </div>
+          </div>
         </div>
           <img src="../img/layers-1.png" class="eclipse1">
-<!--          <img src="../img/Ellipse2.svg" class="eclipse2">-->
-<!--          <img src="../img/Ellipse3.svg" class="eclipse3">-->
-<!--          <img src="../img/Ellipse4.svg" class="eclipse4">-->
       </div>
   </div>
 </template>
@@ -37,10 +29,33 @@ export default {
             mouseX: 0,
             mouseY: 0,
             maxOffset: 30,
-            prepod: [
+            currentPrepod: null,
+            prepods: [
                 {
-
-                }
+                    name: 'Математика',
+                    text: '1',
+                    show: true,
+                },
+                {
+                    name: 'Русский язык',
+                    text: '2',
+                    show: false,
+                },
+                {
+                    name: 'Обществознание',
+                    text: '3',
+                    show: false,
+                },
+                {
+                    name: 'Информатика',
+                    text: '4',
+                    show: false,
+                },
+                {
+                    name: 'Экономика',
+                    text: '5',
+                    show: false,
+                },
             ]
         };
         },
@@ -48,7 +63,6 @@ export default {
         divStyle() {
             const offsetX = (this.mouseX / window.innerWidth - 0.5) * 2 * this.maxOffset;
             const offsetY = (this.mouseY / window.innerHeight - 0.5) * 2 * this.maxOffset;
-
             return {
                 transition: 'transform 0.3s ease-out',
                 transform: `translate3d(${offsetX}px, ${offsetY}px, 0)`,
@@ -60,7 +74,21 @@ export default {
             // обновляем положение мыши
             this.mouseX = event.clientX;
             this.mouseY = event.clientY;
-        }
+        },
+        show(prepod) {
+            if (prepod.show && this.selectedPrepodIndex === 0) {
+                // Скрыть выделенный предмет
+                prepod.show = false;
+                return;
+            }
+
+            // Скрыть другие преподаватели и сделать текущий видимым
+            this.prepods.forEach((item) => (item.show = false));
+            prepod.show = true;
+
+            // Обновить индекс выделенного предмета
+            this.selectedPrepodIndex = this.prepods.findIndex((item) => item.name === prepod.name);
+        },
     }
 }
 </script>
@@ -77,6 +105,9 @@ export default {
   font-size: 36px;
   font-weight: 700;
   color: black;;
+}
+.prepod_name_text{
+    cursor: pointer;
 }
 .p{
   margin: 0;
@@ -102,8 +133,12 @@ export default {
 .img_block_7{
     color: #515151;
     width: 200px;
-    right: 250px;
+    left: 662px;
+    top: 36px;
+    right: 0;
     position: absolute;
+    font-weight: 400;
+    font-size: 18px;
 }
 .matem{
   color: black;

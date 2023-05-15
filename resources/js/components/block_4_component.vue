@@ -1,8 +1,8 @@
 <template>
-  <div class="block_4">
+  <div class="block_4" v-on:mousemove="moveDiv">
       <div class="container_block_set">
         <div class="card_block_4" id="card1_block_4">
-          <img src="../img/Peace_R-Angle_A51.svg" class="hand_img">
+          <img src="../img/Peace_R-Angle_A51.svg" class="hand_img" :style="divStyle">
           <img src="../img/studying1.svg" class="studing_img">
           <p id="text_light" class="font_param">закончили курсы</p>
           <p id="text_big" class="font_param">10 000+</p>
@@ -24,7 +24,7 @@
           <p class="font_param" id="text_603">603</p>
         </div>
         <div class="card_block_4" id="card5_block_4">
-          <img src="../img/Thumbs_Up_or_Down_L-Angle_B31.svg" class="thumbs_img">
+          <img src="../img/Thumbs_Up_or_Down_L-Angle_B31.svg" class="thumbs_img" :style="divStyle">
           <img src="../img/image1.png" class="image1_img">
         </div>
       </div>
@@ -33,7 +33,32 @@
 
 <script>
 export default {
-  name: "block_4_component"
+  name: "block_4_component",
+    data() {
+        return {
+            mouseX: 0,
+            mouseY: 0,
+            maxOffset: 20,
+        };
+    },
+    computed: {
+        divStyle() {
+            const offsetX = (this.mouseX / window.innerWidth - 0.5) * 2 * this.maxOffset;
+            const offsetY = (this.mouseY / window.innerHeight - 0.5) * 2 * this.maxOffset;
+
+            return {
+                transition: 'transform 0.3s ease-out',
+                transform: `translate3d(${offsetX}px, ${offsetY}px, 0)`,
+            };
+        }
+    },
+    methods: {
+        moveDiv(event) {
+            // обновляем положение мыши
+            this.mouseX = event.clientX;
+            this.mouseY = event.clientY;
+        }
+    }
 }
 </script>
 
