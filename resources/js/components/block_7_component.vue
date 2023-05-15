@@ -10,7 +10,7 @@
 <!--            <p>Информатика</p>-->
 <!--            <p>Экономика</p>-->
           </div>
-        <div class="img_block_7"  :style="divStyle">
+        <div class="img_block_7" :style="divStyle">
 <!--          <img src="../img/123213.png" class="photo">-->
 <!--          <p class="maria">МАРИЯ ДОБРЫНИНА</p>-->
 <!--          <div class="text_block_img">-->
