@@ -4,14 +4,17 @@
         <p class="FAQ">FAQ</p>
       <div class="items_block_6">
         <div class="item_block" v-for="(item, index) in items" :key="index">
+
           <div class="item" @click="toggleAdditionalText(item)">
               <p>{{ item.mainText }}</p>
               <p class="plus" v-if="item.minus"><img src="../img/Vector13.svg"> </p>
               <p class="plus" v-if="!item.minus"><img src="../img/Vector19.svg"></p>
           </div>
+            <Transition name="slide-fade">
             <div class="content" v-if="item.showAdditionalText">
                 <p>{{ item.additionalText }}</p>
             </div>
+            </Transition>
         </div>
       </div>
 
@@ -73,7 +76,19 @@ export default {
 
 <style scoped lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+.slide-fade-enter-active {
+  transition: all 0.3s ease-out;
+}
 
+.slide-fade-leave-active {
+  transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transform: translateX(20px);
+  opacity: 0;
+}
 .item{
   display: flex;
   justify-content: space-between;
@@ -92,6 +107,7 @@ export default {
   justify-content: center;
   align-items: center;
   font-size: 45px;
+  cursor: pointer;
   margin: 5px 0;
 }
 .FAQ{
@@ -117,7 +133,7 @@ export default {
 }
 .block_6_contnainer{
   background: #FFE5C4;
-    padding: 0 0 10px 0;
+    padding: 0 0 50px 0;
     height: inherit;
     transition: height 0.3s ease-in-out;
 }

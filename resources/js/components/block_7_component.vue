@@ -123,6 +123,8 @@ export default {
     font-weight: 500;
     left: 250px;
     font-size: 22px;
+    right: 0;
+    margin: auto;
     color: #515151;
     text-align: left;
 }
@@ -133,15 +135,13 @@ export default {
 .img_block_7{
     color: #515151;
     width: 200px;
-    left: 662px;
+    left: 490px;
+    margin: auto;
     top: 36px;
     right: 0;
     position: absolute;
     font-weight: 400;
     font-size: 18px;
-}
-.matem{
-  color: black;
 }
 .text_block_7{
     display: flex;

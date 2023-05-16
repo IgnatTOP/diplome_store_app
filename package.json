@@ -8,7 +8,7 @@
         "preview": "vite preview --port 4173"
     },
     "devDependencies": {
-        "axios": "^1.1.2",
+        "axios": "^1.4.0",
         "laravel-vite-plugin": "^0.7.6",
         "vite": "^4.3.5"
     },
@@ -20,6 +20,7 @@
         "scss": "^0.2.4",
         "vue": "^3.3.2",
         "vue-router": "^4.2.0",
-        "vue-scrollto": "^2.20.0"
+        "vue-scrollto": "^2.20.0",
+        "vue-transitions": "^1.1.2"
     }
 }

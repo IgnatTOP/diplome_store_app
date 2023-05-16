@@ -2,9 +2,9 @@
 <html lang="ru">
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<title>Ёлки палки - панель администратора</title>
+	<title>Панель Администратора</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
-	<link rel="icon" href="{{asset('assets/img/icon.ico')}}" type="image/x-icon"/>
+	<link rel="icon" href="{{asset('assets/img/icon_new.png')}}" type="image/x-icon"/>
     <script src="{{ asset('assets/js/plugin/webfont/webfont.min.js') }}"></script>
 	<!-- Fonts and icons -->
 
@@ -67,24 +67,24 @@
                         <li class="nav-item">
                             <a href="{{route('order.index')}}">
                                 <i class="fas fa-layer-group"></i>
-                                <p>Заказы</p>
+                                <p>Заявки</p>
                             </a>
                         </li>
 						<li class="nav-item">
-							<a href="{{route('category.index')}}">
+							<a href="#">
 								<i class="fas fa-layer-group"></i>
-								<p>Категории</p>
+								<p>Преподователи</p>
 							</a>
 						</li>
 						<li class="nav-item">
-							<a href="{{route('product.index')}}">
+							<a href="#">
 								<i class="fas fa-layer-group"></i>
-								<p>Товары</p>
+								<p>Предметы</p>
 							</a>
 						</li><li class="nav-item">
-							<a href="{{route('user.index')}}">
+							<a href="#">
 								<i class="fas fa-layer-group"></i>
-								<p>Пользователи</p>
+								<p>Отзыв</p>
 							</a>
 						</li>
 					</ul>
@@ -170,7 +170,7 @@
             value:60,
             maxValue:100,
             width:7,
-            text: {{$countToday}},
+            text: 3,
             colors:['#f1f1f1', '#FF9E27'],
             duration:400,
             wrpClass:'circles-wrp',
@@ -185,7 +185,7 @@
             value:70,
             maxValue:100,
             width:7,
-            text: {{$countMonth}},
+            text: 5,
             colors:['#f1f1f1', '#2BB930'],
             duration:400,
             wrpClass:'circles-wrp',
@@ -200,7 +200,7 @@
             value:40,
             maxValue:100,
             width:7,
-            text: {{$countYear}},
+            text: 31,
             colors:['#f1f1f1', '#F25961'],
             duration:400,
             wrpClass:'circles-wrp',
