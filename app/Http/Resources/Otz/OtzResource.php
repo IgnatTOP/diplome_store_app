@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Resources\Category;
+namespace App\Http\Resources\Otz;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class CategoryResource extends JsonResource
+class OtzResource extends JsonResource
 {
     /**
      * Transform the resource into an array.

@@ -1,21 +1,15 @@
 <?php
 
-namespace App\Http\Controllers\API\Product;
+namespace App\Http\Controllers\API\Prepods;
 
 use App\Http\Controllers\Controller;
-use App\Models\Category;
 use App\Models\predmet;
-use App\Models\Product;
+use App\Models\Prepods;
 
 class FilterController extends Controller
 {
-   public function __invoke(predmet $product)
+   public function __invoke()
    {
-       $predmet = predmet::all();
-       $result = [
-           'predmet' => $predmet,
-       ];
-
-        return response()->json($result);
+       return predmet::all();
    }
 }

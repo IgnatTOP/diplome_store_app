@@ -13,7 +13,7 @@
         </div>
         <div class="card_block_4" id="card3_block_4">
           <p class="font_param" id="text_2000">2000+</p>
-          <p class="font_param" id="post_fin">поступили в Финашку</p>
+          <p class="font_param" id="post_fin">поступили в</p>
           <p class="font_param" id="post_fin2">Финашку</p>
           <img src="../img/school1.svg" class="school_img">
         </div>
@@ -65,27 +65,28 @@ export default {
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 #text_light{
-  font-size: 20px;
-  margin: 0 20px;
+    font-size: 30px;
+    margin: 0 29px;
 }
 .thumbs_img{
-  position: absolute;
-  width: 190px;
-  margin: 95px 45px;
+    position: absolute;
+    width: 215px;
+    margin: 118px 76px;
 }
 .hand_img{
-  z-index: -1;
-  margin: -130px -187px;
-  position: absolute;
+    z-index: -1;
+    margin: -141px -224px;
+    position: absolute;
 }
 #post_fin{
-  margin: 0 20px;
-  text-align: right;
+    margin: 0 20px;
+    text-align: right;
+    font-size: 25px;
 }
 #text_magistr{
-  font-size: 24px;
-  text-align: center;
-  margin: -14px 0;
+    font-size: 28px;
+    text-align: center;
+    margin: -14px 0;
 }
 #text_ech{
   margin: 10px 35px;
@@ -99,9 +100,9 @@ export default {
   margin: 10px 20px 0;
 }
 #post_fin2{
-  margin: 0 20px;
-  font-size: 20px;
-  text-align: right;
+    margin: 0 20px;
+    font-size: 30px;
+    text-align: right;
 }
 .font_param{
   font-family: 'Inter', sans-serif;
@@ -110,33 +111,33 @@ export default {
   color: black;
 }
 #text_big{
-  font-size: 50px;
-  margin: 0 20px;
+    font-size: 60px;
+    margin: 0 49px;
 }
 #text_medium{
-  font-size: 30px;
-  margin: 0 107px;
+    font-size: 30px;
+    margin: 0 123px;
 }
 .school_img{
-  margin: -30px 20px;
-  width: 100px;
-  display: flex;
+    margin: -36px 20px;
+    width: 109px;
+    display: flex;
 }
 .graduation_img{
-  width: 100px;
+    width: 114px;
 }
 .image2_img{
-  display: flex;
-  width: 90%;
-  margin: 12px 13px;
+    display: flex;
+    width: 90%;
+    margin: 21px 13px;
 }
 .image1_img{
   width: 80%;
   margin: 8px 10px;
 }
 .studing_img{
-  width: 177px;
-  margin: 25px 0 0 0;
+    width: 199px;
+    margin: 25px 0 0;
 }
 .block_4{
 
@@ -147,48 +148,51 @@ export default {
   position: absolute;
 }
 .card_block_4{
-  margin: 0 auto 0 auto;
-  left: -496px;
-  right: 0;
-  text-align: center;
-  position: absolute;
-  width: 300px;
-  height: 362px;
-  background: #ECD5FF;
-  border-radius: 20px;
+    margin: 0 auto;
+    left: -602px;
+    right: 0;
+    text-align: center;
+    position: absolute;
+    width: 370px;
+    height: 431px;
+    background: #ECD5FF;
+    border-radius: 20px;
 }
 #card2_block_4{
-  margin: 0 auto 0 auto;
-  left: 82px;
-  right: 0;
-  text-align: center;
-  height: 170px;
-  width: 243px;
+    margin: 0 auto;
+    left: 75px;
+    right: 0;
+    text-align: center;
+    height: 212px;
+    width: 287px;
 }
 #card3_block_4{
-  margin: 184px auto 0 auto;
-  left: 106px;
-  right: 0;
-  text-align: center;
-  height: 178px;
-  width: 269px;
+    margin: 225px auto 0;
+    left: 82px;
+    right: 0;
+    height: 206px;
+    width: 295px;
 }
 #card4_block_4{
-  margin: 0 auto 0 auto;
-  left: 592px;
-  right: 0;
-  /* bottom: 267px; */
-  text-align: center;
-  height: 170px;
-  width: 240px;
+    margin: 0 auto;
+    left: 657px;
+    right: 0;
+    text-align: center;
+    height: 194px;
+    width: 267px;
 }
 #card5_block_4{
-  margin: 185px auto 0 auto;
-  left: 619px;
-  right: 0;
-  /* bottom: 267px; */
-  text-align: center;
-  height: 178px;
-  width: 204px;
+    margin: 207px auto 0;
+    left: 670px;
+    right: 0;
+    text-align: center;
+    height: 224px;
+    width: 257px;
+}
+
+@media (max-width: 600px) {
+    .block_4 {
+        display: none;
+    }
 }
 </style>

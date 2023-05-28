@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Resources\Category;
+namespace App\Http\Resources\predmet;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class CategoryResource extends JsonResource
+class PredmetResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -17,7 +17,6 @@ class CategoryResource extends JsonResource
         return [
             'id' => $this->id,
             'title' => $this->title,
-            'image_url' => $this->imageUrl,
         ];
     }
 }

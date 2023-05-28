@@ -18,6 +18,7 @@ class OrderResource extends JsonResource
             'FIO' => $this->FIO,
             'email' => $this->email,
             'coment' => $this->coment,
+            'number' => $this->number,
         ];
     }
 }

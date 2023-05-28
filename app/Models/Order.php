@@ -9,6 +9,6 @@ class Order extends Model
 {
     protected $table = 'orders';
     protected $guarded = false;
-    protected $fillable = ['FIO', 'email', 'coment'];
+    protected $fillable = ['FIO', 'email', 'coment', 'number'];
 
 }

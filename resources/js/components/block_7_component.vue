@@ -4,14 +4,13 @@
         <div class="text_block_7">
           <div class="text">
             <p class="prepod">ПРЕПОДАВАТЕЛИ</p>
-          <div class="fffff" v-for="prepod in prepods">
-            <p @click="show(prepod)" :style="{ fontSize: prepod.show ? '26px' : '20px', color: prepod.show ? 'black' : '#515151' }" class="prepod_name_text">{{prepod.name}}</p>
-            <div class="img_block_7" :style="divStyle" v-if="prepod.show">
-              <img src="../img/123213.png" class="photo">
-              <p class="maria">МАРИЯ ДОБРЫНИНА</p>
-              <div class="text_block_img">
-                  {{prepod.text}}
-              </div>
+          <div class="fffff" v-for="subject in subjects" :key="subject.id">
+            <p class="prepod_name_text" @click="showTeacher(subject.id, subject)" :style="{ fontSize: subject === selectedSubject ? '32px' : '24px', color: subject === selectedSubject ? 'black' : 'rgb(81, 81, 81)'}">{{subject.title}}</p>
+            <div class="img_block_7" :style="divStyle" v-if="currentTeacher">
+              <img :src="'storage/' + currentTeacher.preview_image" class="photo">
+              <p class="maria">{{ currentTeacher.name }}</p>
+              <p class="maria">{{ currentTeacher.content }}</p>
+              <div class="text_block_img"></div>
             </div>
           </div>
           </div>
@@ -29,36 +28,12 @@ export default {
             mouseX: 0,
             mouseY: 0,
             maxOffset: 30,
-            currentPrepod: null,
-            prepods: [
-                {
-                    name: 'Математика',
-                    text: '1',
-                    show: true,
-                },
-                {
-                    name: 'Русский язык',
-                    text: '2',
-                    show: false,
-                },
-                {
-                    name: 'Обществознание',
-                    text: '3',
-                    show: false,
-                },
-                {
-                    name: 'Информатика',
-                    text: '4',
-                    show: false,
-                },
-                {
-                    name: 'Экономика',
-                    text: '5',
-                    show: false,
-                },
-            ]
+            subjects: [],
+            teachers: [],
+            currentTeacher: null,
+            selectedSubject: null
         };
-        },
+    },
     computed: {
         divStyle() {
             const offsetX = (this.mouseX / window.innerWidth - 0.5) * 2 * this.maxOffset;
@@ -67,27 +42,38 @@ export default {
                 transition: 'transform 0.3s ease-out',
                 transform: `translate3d(${offsetX}px, ${offsetY}px, 0)`,
             };
-        }
+        },
+    },
+    mounted(){
+        this.getProductsFilter();
+        this.getProducts();
     },
     methods: {
+        selectSubject(subject) {
+            this.selectedSubject = subject;
+        },
+      showTeacher(subjectId, subject) {
+            this.currentTeacher = this.teachers.find((teacher) => teacher.predmet_id === subjectId);
+            this.selectSubject(subject);
+        },
+        getProductsFilter() {
+            this.axios.get('/api/prepods/filters')
+                .then(res => {
+                    this.subjects = res.data;
+                    console.log(this.subjects)
+                })
+        },
+        getProducts() {
+            this.axios.get('/api/prepods')
+                .then(res => {
+                    this.teachers = res.data;
+                    console.log(this.teachers)
+                })
+        },
         moveDiv(event) {
             // обновляем положение мыши
             this.mouseX = event.clientX;
             this.mouseY = event.clientY;
-        },
-        show(prepod) {
-            if (prepod.show && this.selectedPrepodIndex === 0) {
-                // Скрыть выделенный предмет
-                prepod.show = false;
-                return;
-            }
-
-            // Скрыть другие преподаватели и сделать текущий видимым
-            this.prepods.forEach((item) => (item.show = false));
-            prepod.show = true;
-
-            // Обновить индекс выделенного предмета
-            this.selectedPrepodIndex = this.prepods.findIndex((item) => item.name === prepod.name);
         },
     }
 }
@@ -128,8 +114,10 @@ export default {
     color: #515151;
     text-align: left;
 }
+
 .photo{
   width: 200px;
+    border-radius: 10px;
 }
 
 .img_block_7{
@@ -158,5 +146,22 @@ export default {
 .eclipse1{
   width: 100%;
   margin: 430px 0 0 0;
+}
+.fffff{
+}
+@media (max-width: 600px) {
+    .img_block_7{
+        display: flex;
+        margin: 100px auto 0;
+        flex-direction: column;
+        align-items: center;
+        position: inherit;
+    }
+    .prepod{
+        font-size: 36px;
+    }
+    .text{
+        left: 5px;
+    }
 }
 </style>

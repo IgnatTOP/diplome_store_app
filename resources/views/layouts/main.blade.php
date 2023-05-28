@@ -49,12 +49,12 @@
 			<!-- End Logo Header -->
 
 			<!-- Navbar Header -->
-			
+
 			<!-- End Navbar -->
 		</div>
 
 		<!-- Sidebar -->
-		<div class="sidebar sidebar-style-2">			
+		<div class="sidebar sidebar-style-2">
 			<div class="sidebar-wrapper scrollbar scrollbar-inner">
 				<div class="sidebar-content">
 					<ul class="nav nav-primary">
@@ -71,18 +71,18 @@
                             </a>
                         </li>
 						<li class="nav-item">
-							<a href="#">
+							<a href="{{route('prepod.index')}}">
 								<i class="fas fa-layer-group"></i>
-								<p>Преподователи</p>
+								<p>Преподаватели</p>
 							</a>
 						</li>
 						<li class="nav-item">
-							<a href="#">
+							<a href="{{route('predmet.index')}}">
 								<i class="fas fa-layer-group"></i>
 								<p>Предметы</p>
 							</a>
 						</li><li class="nav-item">
-							<a href="#">
+							<a href="{{route('otz.index')}}">
 								<i class="fas fa-layer-group"></i>
 								<p>Отзыв</p>
 							</a>
@@ -170,7 +170,7 @@
             value:60,
             maxValue:100,
             width:7,
-            text: 3,
+            text: {{$countToday}},
             colors:['#f1f1f1', '#FF9E27'],
             duration:400,
             wrpClass:'circles-wrp',
@@ -185,7 +185,7 @@
             value:70,
             maxValue:100,
             width:7,
-            text: 5,
+            text: {{$countMonth}},
             colors:['#f1f1f1', '#2BB930'],
             duration:400,
             wrpClass:'circles-wrp',
@@ -200,7 +200,7 @@
             value:40,
             maxValue:100,
             width:7,
-            text: 31,
+            text: {{$countYear}},
             colors:['#f1f1f1', '#F25961'],
             duration:400,
             wrpClass:'circles-wrp',

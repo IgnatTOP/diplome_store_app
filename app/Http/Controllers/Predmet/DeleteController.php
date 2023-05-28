@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Http\Controllers\Category;
+namespace App\Http\Controllers\Predmet;
 
 use App\Http\Controllers\Controller;
-use App\Models\Category;
+use App\Models\predmet;
 use Illuminate\Http\Request;
 
 class DeleteController extends Controller
 {
-    public function __invoke(Category $category)
+    public function __invoke(predmet $predmet)
     {
-        $category->delete();
-        return redirect()->route('category.index');
+        $predmet->delete();
+        return redirect()->route('predmet.index');
     }
 }

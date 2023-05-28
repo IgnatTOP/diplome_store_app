@@ -27,6 +27,7 @@ class StoreRequest extends FormRequest
             'FIO' => 'required',
             'email' => 'required',
             'coment' => 'required',
+            'number' => 'required',
         ];
     }
 }

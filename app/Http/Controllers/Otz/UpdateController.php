@@ -1,19 +1,19 @@
 <?php
 
-namespace App\Http\Controllers\Category;
+namespace App\Http\Controllers\Otz;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Category\UpdateRequest;
-use App\Models\Category;
+use App\Http\Requests\Otz\UpdateRequest;
+use App\Models\Otz;
 use Illuminate\Http\Request;
 
 class UpdateController extends Controller
 {
-    public function __invoke(UpdateRequest $request, Category $category)
+    public function __invoke(UpdateRequest $request, Otz $otz)
     {
         $data = $request->validated();
-        $category->update($data);
-        return view('category.show', compact('category'));
+        $otz->update($data);
+        return view('otz.show', compact('otz'));
 
     }
 }

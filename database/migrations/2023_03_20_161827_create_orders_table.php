@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('FIO');
             $table->string('email');
             $table->string('coment');
+            $table->string('number');
             $table->timestamps();
         });
     }

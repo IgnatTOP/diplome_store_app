@@ -2,7 +2,7 @@
     <Transition name="bounce">  <form_poput v-if="visible" @close_poput="close_poput"/></Transition>
   <div class="header">
     <div class="img_header_logo">
-      <svg width="437" height="166" viewBox="0 0 437 166" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <svg viewBox="0 0 437 166" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <rect width="437" height="166" fill="url(#pattern0)"/>
         <defs>
           <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
@@ -17,18 +17,18 @@
         <a @click="scroll5" class="scroll_button">Преподаватели</a>
         <a @click="this.visible = true" class="scroll_button">Перезвоните мне</a>
         <a>+7 (495) 249-52-49</a>
-        <a href="https://fa.ru" class="scroll_button">Личный кабинет</a>
+        <a href="http://www.fa.ru/Pages/Home.aspx" class="scroll_button">Личный кабинет</a>
     </div>
 
   </div>
 </template>
 
 <script>
-import Form_poput from "./form_poput.vue";
+import form_poput from "./form_poput.vue";
 
 export default {
   name: "header_component",
-    components: {Form_poput},
+    components: {form_poput},
     data(){
       return{
         visible: false,
@@ -93,5 +93,15 @@ export default {
 }
 .header{
   margin: 0 auto;
+}
+@media (max-width: 600px) {
+    .menu_container{
+        font-size: 25px;
+        flex-direction: column;
+        height: 300px;
+        max-width: 100%;
+    }
+
+
 }
 </style>

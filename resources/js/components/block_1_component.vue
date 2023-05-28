@@ -56,4 +56,19 @@ export default {
 .text_container_block_1{
   width: 60%;
 }
+@media (max-width: 600px) {
+    .title{
+        font-size: 32px;
+        max-width: 100%;
+        margin: 60px auto;
+    }
+    .block_container{
+        display: flex;
+        align-items: center;
+        width: 90%;
+        height: max-content;
+        margin: 0 auto;
+    }
+}
+
 </style>

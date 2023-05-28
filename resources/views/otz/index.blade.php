@@ -3,7 +3,7 @@
     <div class="content">
         <div class="page-inner">
             <div class="page-header">
-                <h4 class="page-title">Категории</h4>
+                <h4 class="page-title">Отзыв</h4>
                 <ul class="breadcrumbs">
                     <li class="nav-home">
                         <a href="#">
@@ -14,7 +14,7 @@
                         <i class="flaticon-right-arrow"></i>
                     </li>
                     <li class="nav-item">
-                        <a href="#">Категории</a>
+                        <a href="#">Отзыв</a>
                     </li>
                 </ul>
             </div>
@@ -22,10 +22,9 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <div class="card-title">Категории</div>
-                            <div class="card-category">Здесь можно добавить, отредактировать, удалить категорию</div>
+                            <div class="card-title">Отзыв</div>
                             <br>
-                            <a href="{{route('category.create')}}"><button class="btn btn-primary">Добавить категорию</button></a>
+                            <a href="{{route('otz.create')}}"><button class="btn btn-primary">Добавить Отзыв</button></a>
 
                         </div>
                         <div class="card-body">
@@ -33,14 +32,18 @@
                                         <thead>
                                         <tr>
                                             <th scope="col">Id</th>
-                                            <th scope="col">Название</th>
+                                            <th scope="col">Имя</th>
+                                            <th scope="col">Отзыв</th>
+                                            <th scope="col">Пройденный курс</th>
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        @foreach($categories as $category)
+                                        @foreach($otz as $ot)
                                             <tr>
-                                                <td>{{$category->id}}</td>
-                                                <td><a href="{{route('category.show', $category->id)}}">{{$category->title}}</a></td>
+                                                <td><a href="{{route('otz.show', $ot->id)}}">{{$ot->id}}</a></td>
+                                                <td>{{$ot->name}}</td>
+                                                <td>{{$ot->content}}</td>
+                                                <td>{{$ot->title}}</td>
                                             </tr>
                                         @endforeach
                                         </tbody>

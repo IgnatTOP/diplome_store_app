@@ -27,6 +27,7 @@ class UpdateRequest extends FormRequest
             'FIO' => 'required',
             'email' => 'required',
             'coment' => 'required',
+            'number' => 'required',
         ];
     }
 }

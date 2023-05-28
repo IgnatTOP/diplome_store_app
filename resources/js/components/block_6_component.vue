@@ -137,4 +137,19 @@ export default {
     height: inherit;
     transition: height 0.3s ease-in-out;
 }
+@media (max-width: 600px) {
+  .block_6{
+    margin: 100px 0 0;
+  }
+  .FAQ{
+    font-size: 55px;
+    padding: 23px 0 0;
+    margin: 0 80px 20px;
+  }
+  .items_block_6{
+    width: 300px;
+    margin: 0 0 0 60px;
+  }
+
+}
 </style>

@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Http\Controllers\Category;
+namespace App\Http\Controllers\Otz;
 
 use App\Http\Controllers\Controller;
-use App\Models\Category;
+use App\Models\Otz;
 use Illuminate\Http\Request;
 
 class IndexController extends Controller
 {
    public function __invoke()
    {
-       $categories = Category::all();
-       return view('category.index', compact('categories'));
+       $otz = Otz::all();
+       return view('otz.index', compact('otz'));
    }
 }

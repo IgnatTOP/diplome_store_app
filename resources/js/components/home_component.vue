@@ -7,7 +7,7 @@
     <div ref="a5" class="a111"><block_5_component/></div>
     <div ref="a6" class="a111"><block_6_component/></div>
     <div ref="a7" class="a111"><block_7_component/></div>
-    <div ref="a8" class="a111"><block_8_component/></div>
+    <div class="a111"><block_8_component/></div>
 
 </template>
 

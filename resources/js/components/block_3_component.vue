@@ -144,4 +144,42 @@ export default {
   border-radius: 50px;
   transform: rotate(-12deg);
 }
+@media (max-width: 600px) {
+    .block_3{
+        height: 911px;
+    }
+    .block_container_1{
+        transform: none;
+        width: 80%;
+        height: max-content;
+        margin: 42px auto 0;
+        left: 0;
+        right: 0;
+        text-align: center;
+    }
+    .block_container_2{
+        transform: none;
+        position: absolute;
+        width: 80%;
+        height: max-content;
+        margin: 354px auto 0;
+        left: 0;
+        right: 0;
+        text-align: center;
+    }
+    .text_container_1{
+        margin: 30px 0 5px;
+        font-weight: 700;
+        font-size: 25px;
+    }
+    .text_container_2{
+        text-align: left;
+        margin: 0 20px;
+        font-weight: 700;
+        font-size: 24px;
+    }
+    .minus_svg, .minus_svg2, .minus_svg3, .plus_svg, .plus_svg2, .plus_svg3{
+        display: none;
+    }
+}
 </style>

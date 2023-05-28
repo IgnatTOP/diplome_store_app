@@ -4,17 +4,29 @@
     <div class="border_block_container">
       <div class="border_block_1">
         <div class="border_block_item">
-          <p>Текст</p>
+            <div class="img_FI">
+                <img :src="'http://kiphub.online/storage/' + otz[0].preview_image" class="img_otz">
+                <div class="name_fi">
+                    <p class="name_otz">{{otz[0].name}}</p>
+                    <p class="history_post">{{otz[0].title}}</p>
+                </div>
+            </div>
+            <p>{{otz[0].content}}</p>
+
         </div>
       </div>
       <div class="border_block_1" id="block_2">
         <div class="border_block_item">
           <p>Видео</p>
+            <video controls>
+                <source src="../img/video1--online-audio-convert.com.mp4" type="video/mp4">
+            </video>
         </div>
       </div>
       <div class="border_block_1">
         <div class="border_block_item">
           <p>фото</p>
+            <img src="../img/iamge.png" class="iamge">
         </div>
       </div>
     </div>
@@ -24,7 +36,25 @@
 
 <script>
 export default {
-  name: "block_5_component"
+  name: "block_5_component",
+    data(){
+      return{
+          otz: [],
+      }
+    },
+    mounted(){
+        this.getOtz();
+    },
+    methods: {
+        getOtz() {
+            this.axios.get('/api/otz')
+                .then(res => {
+                    this.otz = res.data
+                    console.log(this.otz)
+                })
+        },
+    }
+
 }
 </script>
 
@@ -32,6 +62,44 @@ export default {
 @font-face {
   font-family: 'SpriteGraffiti';
   src: url(../font/SpriteGraffiti-Shadow.otf);
+}
+.img_FI{
+    display: flex;
+    /* max-width: 90%; */
+    /* width: 60%; */
+    margin: 10px 0;
+    align-items: center;
+    justify-content: center;
+}
+.name_otz{
+    font-weight: 700;
+    font-size: 20px;
+    margin: 5px 0 0 0;
+}
+.history_post{
+    color: #4F4F4F;
+    font-weight: 600;
+    margin: 5px 0 0 0;
+}
+.name_fi{
+    width: 70%;
+    margin: 0 0 0 10px;
+    text-align: left;
+}
+.img_otz{
+    width: 75px;
+    height: inherit;
+    min-width: 75px;
+    border-radius: 20px;
+}
+.iamge{
+    max-width: 296px;
+    max-height: 366px;
+}
+video{
+    height: 364px;
+    width: 311px;
+    border-radius: 10px;
 }
 .block_5{
   margin: 600px 0 0 0;
@@ -56,5 +124,27 @@ export default {
   display: flex;
   justify-content: center;
   margin: 120px auto 0 0;
+}
+@media (max-width: 600px) {
+    .name_block5{
+        font-size: 80px;
+        margin: 64px 0 20px;
+    }
+    .block_5{
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        justify-content: center;
+    }
+    .border_block_container{
+        display: flex;
+        margin: 12px 0;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    #block_2{
+        margin: 20px 0;
+    }
 }
 </style>

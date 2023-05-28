@@ -5,55 +5,73 @@
       <div class="card_height">
           <div class="card" id="card_1">
             <p class="card_name">9 класс</p>
+              <a href="http://www.fa.ru/Pages/Home.aspx">
             <div class="block_1">
               <p class="text_card">поступление в
                 лицей</p>
             </div>
+              </a>
+              <a href="http://www.fa.ru/Pages/Home.aspx">
             <div class="block_1">
               <p class="text_card">сдача
                 огэ</p>
             </div>
+              </a>
           </div>
         <div class="card" id="card_2">
           <p class="card_name">10 класс</p>
+            <a href="http://www.fa.ru/Pages/Home.aspx">
           <div class="block_1" id="viol">
             <p class="text_card">подготовка к олимпиадам</p>
           </div>
+            </a>
+            <a href="http://www.fa.ru/Pages/Home.aspx">
           <div class="block_1" id="viol1">
             <p class="text_card">сдача егэ</p>
           </div>
+            </a>
         </div>
         <div class="card" id="card_3">
           <p class="card_name">11 класс</p>
+            <a href="http://www.fa.ru/Pages/Home.aspx">
           <div class="block_1" id="green">
             <p class="text_card">подготовка к олимпиадам</p>
           </div>
+            </a>
+            <a href="http://www.fa.ru/Pages/Home.aspx">
           <div class="block_1" id="green1">
             <p class="text_card">сдача егэ</p>
           </div>
+            </a>
         </div>
       </div>
       <div class="card_height-">
         <div class="card-" id="card-1">
           <p class="card_name1" id="card_name-big">спо</p>
+            <a href="http://www.fa.ru/Pages/Home.aspx">
           <div class="block_1">
             <p class="text_card">поступление в</p>
             <p class="text_card2">вуз</p>
           </div>
+            </a>
         </div>
         <div class="card-" id="card-2">
           <p class="card_name1" id="card_name-medium">студенты</p>
+            <a href="http://www.fa.ru/Pages/Home.aspx">
           <div class="block_1" id="viol3">
             <p class="text_card">обучение на</p>
             <p class="text_card2">магистра</p>
           </div>
+            </a>
       </div>
         <div class="card-" id="card-3">
           <p class="card_name1">иностранные студенты</p>
+            <a href="http://www.fa.ru/Pages/Home.aspx">
           <div class="block_1" id="green3">
             <p class="text_card">поступление в</p>
             <p class="text_card2">вуз</p>
           </div>
+            </a>
       </div>
       </div>
     </div>
@@ -94,6 +112,11 @@ export default {
   font-size: 57px;
   margin: 40px 0 10px 0;
   height: 70px;
+}
+a{
+    color: black;
+    text-decoration: none;
+    border: none;
 }
 .card_height{
   display: flex;
@@ -166,5 +189,26 @@ export default {
 }
 #card_3{
   background: #D8FDD0;
+}
+@media (max-width: 600px) {
+    .card_height{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    .card_height-{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    .card-{
+        margin: 20px 0 ;
+    }
+  .name_block_2{
+      font-size: 90px;
+      margin: 20px 0;
+  }
 }
 </style>

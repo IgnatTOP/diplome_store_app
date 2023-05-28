@@ -14,7 +14,7 @@
                         <i class="flaticon-right-arrow"></i>
                     </li>
                     <li class="nav-item">
-                        <a href="#">Категории</a>
+                        <a href="#">Отзыв</a>
                     </li>
                 </ul>
             </div>
@@ -22,12 +22,12 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-body">
-                            <form action="{{route('category.update', $category->id)}}" method="post" enctype="multipart/form-data">
+                            <form action="{{route('otz.update', $otz->id)}}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 @method('patch')
                                 <div class="form-group">
-                                    <p>Название категории</p>
-                                    <input type="text" name="title" value="{{$category->title}}" class="form-control" placeholder="Название">
+                                    <p>Название Отзыв</p>
+                                    <input type="text" name="title" value="{{$otz->title}}" class="form-control" placeholder="Название">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleFormControlFile1">Изображение</label>
