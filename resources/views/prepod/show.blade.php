@@ -3,7 +3,7 @@
     <div class="content">
         <div class="page-inner">
             <div class="page-header">
-                <h4 class="page-title">Преподователь</h4>
+                <h4 class="page-title">Преподаватель</h4>
                 <ul class="breadcrumbs">
                     <li class="nav-home">
                         <a href="#">
@@ -14,7 +14,7 @@
                         <i class="flaticon-right-arrow"></i>
                     </li>
                     <li class="nav-item">
-                        <a href="#">Преподователь</a>
+                        <a href="#">Преподаватель</a>
                     </li>
                 </ul>
             </div>

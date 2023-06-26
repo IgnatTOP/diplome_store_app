@@ -1,11 +1,11 @@
 <template>
     <div class="poput_container">
         <div class="card_form">
-            <div class="poput_header">
-                <p class="name_poput">Форма</p>
-                <img src="../img/Vector19.svg" class="close_poput" @click="close_poput">
-            </div>
             <div class="input">
+                <div class="poput_header">
+                    <p class="name_poput">Заполни и мы свяжемся с тобой!</p>
+                    <img src="../img/Vector19.svg" class="close_poput" @click="close_poput">
+                </div>
                 <form @submit.prevent="onSubmit" class="form_order">
                     <Transition name="slide-fade">
                         <p v-if="phoneError" class="help-block">{{ phoneError }}</p>
@@ -38,7 +38,7 @@ export default {
             email: '',
             FIO: '',
             number: '',
-            siteKey: '6LeItSkmAAAAAHJlsevsK_E5Wt-6y0HPVFHIUDcn',
+            siteKey: '6Lf_aMsmAAAAAEl0-oLymtq7iFG-WFqVj94YLhM3',
             phoneError: '',
             serverError: '',
             testnumber: false,
@@ -140,12 +140,15 @@ export default {
 }
 .name_poput{
     margin: 10px 0;
+    font-size: 20px;
 }
 .poput_header{
     font-size: 22px;
     display: flex;
     justify-content: space-between;
-    padding: 0 20px;
+    padding: 10px 20px 0;
+    margin: 0;
+    transform: rotate(-3.14deg);
 }
 .close_poput{
     transform: rotate(315deg);
@@ -169,23 +172,28 @@ export default {
 }
 .card_form{
     width: 396px;
-    height: max-content;
-    background: #F1A33F;
+    height: 50%;
     margin: auto;
     position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
+    z-index: 99999;
     border-radius: 15px;
     right: 0;
 }
 .form_order{
     display: flex;
+    width: 396px;
+    background: #DFBFFF;
+    border-radius: 10px;
     flex-direction: column;
+    transform: rotate(-3.14deg);
     align-items: center;
+    margin: 10px 35px 35px;
 }
 input{
-    background: #FFC882;
+    background: white;
     border-radius: 20px;
     height: 40px;
     border: none;
@@ -204,9 +212,27 @@ input{
     text-align: center;
     color: #060606;
     border: none;
-    background: #FFDCAF;
+    background: white;
     cursor: pointer;
     margin: 10px 0 10px;
     border-radius: 20px;
+}
+.input{
+    position: absolute;
+    z-index: -9;
+    width: min-content;
+    margin: -41px -43px;
+    height: auto;
+    background: #D0A0FF;
+    border-radius: 10px;
+    transform: rotate(3.14deg);
+}
+@media (max-width: 600px) {
+    .input{
+        margin: -44px 13px;
+    }
+    .form_order{
+        width: 300px;
+    }
 }
 </style>

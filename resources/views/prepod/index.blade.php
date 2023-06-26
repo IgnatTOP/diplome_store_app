@@ -3,7 +3,7 @@
     <div class="content">
         <div class="page-inner">
             <div class="page-header">
-                <h4 class="page-title">Преподователи</h4>
+                <h4 class="page-title">Преподаватели</h4>
                 <ul class="breadcrumbs">
                     <li class="nav-home">
                         <a href="#">
@@ -14,7 +14,7 @@
                         <i class="flaticon-right-arrow"></i>
                     </li>
                     <li class="nav-item">
-                        <a href="#">Преподователи</a>
+                        <a href="#">Преподаватели</a>
                     </li>
                 </ul>
             </div>
@@ -23,10 +23,10 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <div class="card-title">Преподователи</div>
-                            <div class="card-category">Здесь можно добавить, отредактировать, удалить преподователя</div>
+                            <div class="card-title">Преподаватели</div>
+                            <div class="card-category">Здесь можно добавить, отредактировать, удалить преподавателя</div>
                             <br>
-                            <a href="{{route('prepod.create')}}"><button class="btn btn-primary">Добавить преподователя</button></a>
+                            <a href="{{route('prepod.create')}}"><button class="btn btn-primary">Добавить преподавателя</button></a>
 
                         </div>
                         <div class="card-body">

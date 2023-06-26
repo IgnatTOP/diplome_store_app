@@ -2,7 +2,7 @@
     <Transition name="bounce">  <form_poput v-if="visible" @close_poput="close_poput"/></Transition>
   <div class="header">
     <div class="img_header_logo">
-      <svg viewBox="0 0 437 166" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <svg viewBox="0 0 437 166" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="logologo">
         <rect width="437" height="166" fill="url(#pattern0)"/>
         <defs>
           <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
@@ -16,8 +16,8 @@
         <a @click="scroll4" class="scroll_button">Все курсы</a>
         <a @click="scroll5" class="scroll_button">Преподаватели</a>
         <a @click="this.visible = true" class="scroll_button">Перезвоните мне</a>
-        <a>+7 (495) 249-52-49</a>
-        <a href="http://www.fa.ru/Pages/Home.aspx" class="scroll_button">Личный кабинет</a>
+        <a class="scroll_button">+7 (495) 249-52-49</a>
+        <a href="http://anketa.fa.ru" class="scroll_button">Личный кабинет</a>
     </div>
 
   </div>
@@ -49,7 +49,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 .bounce-enter-active {
     animation: bounce-in 0.5s;
@@ -79,6 +79,9 @@ export default {
   font-weight: 700;
   font-size: 30px;
 }
+.logologo{
+    width: 400px;
+}
 .card_form{
     width: 90%;
     height: 200px;
@@ -86,8 +89,6 @@ export default {
     background: #F1A33F;
 }
 .scroll_button{
-    cursor: pointer;
-    color: #F1A33F;
     text-decoration: none;
     border: none;
 }
@@ -99,9 +100,25 @@ export default {
         font-size: 25px;
         flex-direction: column;
         height: 300px;
-        max-width: 100%;
+        max-width: 80%;
     }
 
 
+}
+.scroll_button {
+     cursor: pointer;
+     color: #444444;
+     border: 4px solid;
+     border-image: repeating-linear-gradient(135deg, #F1A33F 0 10px, #d98d27 0 20px, #f18f3f 0 30px) 8;
+     -webkit-mask:
+             conic-gradient(at bottom 8px left  8px,  #0000 90deg,#000 0)
+             0   var(--_i,200%)/var(--_i,8px) 200% border-box no-repeat,
+             linear-gradient(#000 0 0) padding-box no-repeat;
+     transition: .3s, -webkit-mask-position .3s .3s;
+ }
+.scroll_button:hover {
+    --_i: 100%;
+    color: #F1A33F;
+    transition: .3s, -webkit-mask-size .3s .3s;
 }
 </style>

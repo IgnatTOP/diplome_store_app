@@ -74,7 +74,7 @@ export default {
             email: '',
             FIO: '',
             number: '',
-            siteKey: '6LeItSkmAAAAAHJlsevsK_E5Wt-6y0HPVFHIUDcn',
+            siteKey: '6Lf_aMsmAAAAAEl0-oLymtq7iFG-WFqVj94YLhM3',
             phoneError: '',
             serverError: '',
             testnumber: false,
@@ -180,6 +180,11 @@ export default {
     justify-content: center;
     align-items: center;
 }
+.crasota{
+    background: #D0A0FF;
+    border-radius: 10px;
+    transform: rotate(3.14deg);
+}
 #hight{
     height: 120px;
     margin: 14px 0;
@@ -199,7 +204,7 @@ export default {
     text-decoration: none;
 }
 input{
-    background: #FFC882;
+    background: white;
     border-radius: 20px;
     height: 40px;
     border: none;
@@ -221,17 +226,29 @@ input{
     text-align: center;
     color: #060606;
     border: none;
-    background: #FFDCAF;
+    background: white;
     border-radius: 20px;
     margin: 10px 0 10px 0;
+}
+.input{
+    position: absolute;
+    z-index: -9;
+    width: min-content;
+    margin: -41px -43px;
+    height: inherit;
+    background: #D0A0FF;
+    border-radius: 10px;
+    transform: rotate(3.14deg);
 }
 .form_order{
     display: flex;
     width: 396px;
-    background: #F1A33F;
-    border-radius: 15px;
+    background: #DFBFFF;
+    border-radius: 10px;
     flex-direction: column;
+    transform: rotate(-3.14deg);
     align-items: center;
+    margin: 35px;
 }
 .form_text_title{
     font-family: Inter,sans-serif;
@@ -271,8 +288,10 @@ input{
 }
 .contact{
     margin: 0 0 0 10px;
+    position: inherit;
     text-align: left;
     font-weight: 600;
+    transform: rotate(-3.14deg);
 }
 .number_text_form{
     margin: 30px 0 0 0;
@@ -288,6 +307,12 @@ input{
         width: 95%;
         margin: -94px auto;
     }
+    .form_order{
+        width: 310px;
+    }
+    .input{
+        margin: -23px -193px;
+    }
     .block_form_container{
         display: flex;
         flex-direction: column;
@@ -301,9 +326,12 @@ input{
         width: 95%;
         margin: auto;
     }
+    .block_8{
+        margin: 0 0 46px;
+    }
     .social{
         width: 95%;
-        margin: auto;
+        margin: 640px 0 0;
         position: inherit;
     }
 }

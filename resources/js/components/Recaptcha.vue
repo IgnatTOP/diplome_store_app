@@ -13,7 +13,7 @@ export default {
         },
         theme: {
             type: String,
-            default: 'dark'
+            default: 'light'
         },
         size: {
             type: String,

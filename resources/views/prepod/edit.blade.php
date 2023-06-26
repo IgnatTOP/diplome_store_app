@@ -3,7 +3,7 @@
     <div class="content">
         <div class="page-inner">
             <div class="page-header">
-                <h4 class="page-title">Редактировать преподователя</h4>
+                <h4 class="page-title">Редактировать преподавателя</h4>
                 <ul class="breadcrumbs">
                     <li class="nav-home">
                         <a href="#">
@@ -14,7 +14,7 @@
                         <i class="flaticon-right-arrow"></i>
                     </li>
                     <li class="nav-item">
-                        <a href="#">преподователи</a>
+                        <a href="#">преподаватели</a>
                     </li>
                 </ul>
             </div>
@@ -26,8 +26,8 @@
                                 @csrf
                                 @method('patch')
                                 <div class="form-group">
-                                    <label for="largeInput">ФИ преподователя</label>
-                                    <input type="text" name="name" value="{{$prepod->name}}" class="form-control form-control" id="defaultInput" placeholder="Название">
+                                    <label for="largeInput">ФИ преподавателя</label>
+                                    <input type="text" name="name" value="{{$prepod->name}}" class="form-control form-control" id="defaultInput" placeholder="ФИО">
                                 </div>
                                 <div class="form-group">
                                     <label for="largeInput">Краткое описание</label>

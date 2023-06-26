@@ -6,12 +6,12 @@
             <p class="prepod">ПРЕПОДАВАТЕЛИ</p>
           <div class="fffff" v-for="subject in subjects" :key="subject.id">
             <p class="prepod_name_text" @click="showTeacher(subject.id, subject)" :style="{ fontSize: subject === selectedSubject ? '32px' : '24px', color: subject === selectedSubject ? 'black' : 'rgb(81, 81, 81)'}">{{subject.title}}</p>
-            <div class="img_block_7" :style="divStyle" v-if="currentTeacher">
-              <img :src="'storage/' + currentTeacher.preview_image" class="photo">
-              <p class="maria">{{ currentTeacher.name }}</p>
-              <p class="maria">{{ currentTeacher.content }}</p>
-              <div class="text_block_img"></div>
-            </div>
+              <div class="img_block_7" :style="divStyle" v-if="subject === selectedSubject && currentTeacher">
+                  <img :src="'storage/' + currentTeacher.preview_image" class="photo">
+                  <p class="maria">{{ currentTeacher.name }}</p>
+                  <p class="maria" id="conent">{{ currentTeacher.content }}</p>
+                  <div class="text_block_img"></div>
+              </div>
           </div>
           </div>
         </div>
@@ -102,6 +102,10 @@ export default {
 .maria{
   font-weight: 800;
   margin: 10px 0 5px;
+}
+#conent{
+    font-weight: 600;
+    font-size: 16px;
 }
 .text{
     position: absolute;

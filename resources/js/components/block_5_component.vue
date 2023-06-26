@@ -3,30 +3,28 @@
     <p class="name_block5">отзывы</p>
     <div class="border_block_container">
       <div class="border_block_1">
-        <div class="border_block_item">
+        <div class="border_block_item1">
             <div class="img_FI">
-                <img :src="'http://kiphub.online/storage/' + otz[0].preview_image" class="img_otz">
+                <img :src="'http://facours.ru/storage/' + otz[0].preview_image" class="img_otz">
                 <div class="name_fi">
                     <p class="name_otz">{{otz[0].name}}</p>
                     <p class="history_post">{{otz[0].title}}</p>
                 </div>
             </div>
-            <p>{{otz[0].content}}</p>
+            <p class="content_content">{{otz[0].content}}</p>
 
         </div>
       </div>
       <div class="border_block_1" id="block_2">
         <div class="border_block_item">
-          <p>Видео</p>
             <video controls>
-                <source src="../img/video1--online-audio-convert.com.mp4" type="video/mp4">
+                <source src="../img/123.mp4" type="video/mp4">
             </video>
         </div>
       </div>
       <div class="border_block_1">
         <div class="border_block_item">
-          <p>фото</p>
-            <img src="../img/iamge.png" class="iamge">
+            <img src="../img/IMG_0076.jpg" class="iamge">
         </div>
       </div>
     </div>
@@ -86,6 +84,15 @@ export default {
     margin: 0 0 0 10px;
     text-align: left;
 }
+.border_block_item{
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.content_content{
+    margin: 50px 3px;
+}
 .img_otz{
     width: 75px;
     height: inherit;
@@ -93,11 +100,12 @@ export default {
     border-radius: 20px;
 }
 .iamge{
-    max-width: 296px;
-    max-height: 366px;
+    max-width: 95%;
+    border-radius: 5px;
+    max-height: 95%;
 }
 video{
-    height: 364px;
+    height: 417px;
     width: 311px;
     border-radius: 10px;
 }
